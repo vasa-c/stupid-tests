@@ -34,6 +34,7 @@ abstract class Base
             $results[$name] = (($mt / $count) * $mul);
             $returns[$name] = $r;
         }
+        asort($results);
         foreach ($results as $name => $time) {
             $line = \sprintf('% -15s', $name).' ';
             $line .= \number_format($time, $dec, ',', ' ').' '.$sec;
