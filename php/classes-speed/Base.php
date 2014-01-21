@@ -35,10 +35,17 @@ abstract class Base
             $returns[$name] = $r;
         }
         asort($results);
+        $per = null;
         foreach ($results as $name => $time) {
             $line = \sprintf('% -15s', $name).' ';
             $line .= \number_format($time, $dec, ',', ' ').' '.$sec;
-            $line .= ' ['.$returns[$name].']';
+            if ($per === null) {
+                $per = $time / 100;
+                $plus = null;
+            } else {
+                $plus = '+'.(int)(round($time / $per) - 100).'%';
+            }
+            $line .= ' ['.$returns[$name].'] '.$plus;
             $this->log($line);
         }
     }

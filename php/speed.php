@@ -23,5 +23,6 @@ if (!\class_exists($classname)) {
     exit();
 }
 
+echo 'PHP v'.\PHP_VERSION.\PHP_EOL;
 $test = new $classname();
 $test->run();
