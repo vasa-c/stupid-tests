@@ -11,7 +11,7 @@ class Ref extends Base
 
     public function run()
     {
-        $this->log('$this->prop va $prop = &$this->prop');
+        $this->log('$this->prop vs $prop = &$this->prop');
         $this->log('');
 
         $this->count = 10000;
@@ -21,7 +21,7 @@ class Ref extends Base
         }
         $this->measure('Test', $this->count);
     }
-    
+
     protected function testProp()
     {
         $this->prop = 0;
@@ -30,7 +30,7 @@ class Ref extends Base
         }
         return $this->prop;
     }
-    
+
     protected function testRef()
     {
         $this->prop = 0;
@@ -44,6 +44,6 @@ class Ref extends Base
     private $vals;
 
     private $count = 10000;
-    
+
     private $prop;
 }
