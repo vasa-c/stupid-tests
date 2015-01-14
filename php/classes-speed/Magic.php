@@ -59,4 +59,6 @@ class Magic extends Base
     private $opublic = [];
 
     private $omagic = [];
+
+    private $vals = [];
 }
